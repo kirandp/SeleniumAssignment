@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -14,7 +15,10 @@ public class NewTest1 {
 
 	@BeforeClass
 	public void launch() {
-		driver = new FirefoxDriver();
+		System.setProperty("webdriver.gecko.driver", "geckodriver");
+		FirefoxOptions options = new FirefoxOptions();
+		options.setHeadless(true);
+		driver = new FirefoxDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
@@ -25,7 +29,7 @@ public class NewTest1 {
 
 	@Test(timeOut = 50000)
 	public void ValidatePortal() {
-		System.setProperty("webdriver.gecko.driver", "geckodriver");
+		
 		driver.findElement(By.name("login")).sendKeys("Your Email Id");
 		driver.findElement(By.name("password")).sendKeys("Your Password");
 		driver.findElement(By.name("click")).click();		
