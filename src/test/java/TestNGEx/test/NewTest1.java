@@ -23,7 +23,7 @@ public class NewTest1 {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
 		// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("http://localhost:3001/");
+		driver.get("http://192.168.43.71:3001/");
 
 	}
 
