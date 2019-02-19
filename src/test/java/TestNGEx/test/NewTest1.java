@@ -15,15 +15,15 @@ public class NewTest1 {
 
 	@BeforeClass
 	public void launch() {
-		System.setProperty("webdriver.gecko.driver", "geckodriver");
-		FirefoxOptions options = new FirefoxOptions();
-		options.setHeadless(true);
-		driver = new FirefoxDriver(options);
+		System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
+		//FirefoxOptions options = new FirefoxOptions();
+		//options.setHeadless(true);
+		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
 		// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("http://192.168.43.71:3001/");
+		driver.get("http://192.168.43.231:3001/");
 
 	}
 
