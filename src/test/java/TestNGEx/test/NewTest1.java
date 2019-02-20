@@ -38,7 +38,7 @@ public class NewTest1 {
 	@AfterClass
 	public void close()
 	{
-		driver.close();
+		//driver.close();
 	}
 	
 }
